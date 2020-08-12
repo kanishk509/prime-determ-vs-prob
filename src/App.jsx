@@ -38,7 +38,11 @@ const App = () => {
     <div class="text-center">
       <h2>Primality test</h2>
       <h3>Deterministic vs Probabilistic algorithms</h3>
-      <a href="https://github.com/kanishk509/prime-determ-vs-prob">
+      <a
+        href="https://github.com/kanishk509/prime-determ-vs-prob"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         (view source code)
       </a>
       <div class="my-4">
@@ -109,7 +113,11 @@ const App = () => {
           </li>
           <li>
             Fermat's primality test is based on{" "}
-            <a href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem">
+            <a
+              href="https://en.wikipedia.org/wiki/Fermat%27s_little_theorem"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Fermat's little theorem
             </a>
             . If it finds some suitable base A (1 &lt; A &lt; N-1) such that A
@@ -123,7 +131,11 @@ const App = () => {
             algorithm.
           </li>
           <li>
-            <a href="https://en.wikipedia.org/wiki/Carmichael_number">
+            <a
+              href="https://en.wikipedia.org/wiki/Carmichael_number"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Carmichael numbers
             </a>{" "}
             are composite numbers with very high probability of being
@@ -134,7 +146,11 @@ const App = () => {
             This is one of the biggest flaws of the Fermat's primality test and
             the reason why in practice, more robust probabilistic tests (like
             the{" "}
-            <a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">
+            <a
+              href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Miller–Rabin test)
             </a>{" "}
             are used.
