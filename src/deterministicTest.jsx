@@ -43,13 +43,13 @@ const DeterministicPrimalityTest = (props) => {
         <div>
           {num.toString()} is...
           <br />
-          {factors[0] > 1 ? "COMPOSITE" : "PRIME"} <br />
+          {factors[0] > 1 ? "COMPOSITE" : "PRIME"}
           {factors[0] > 1 ? (
-            <p>
+            <p class="my-2">
               Factors found: {factors[0].toString()} x {factors[1].toString()}
             </p>
           ) : (
-            <p>Could not factorize.</p>
+            <p class="my-2">Could not factorize.</p>
           )}
           Time taken: {timeTaken.toFixed(3)} ms
         </div>

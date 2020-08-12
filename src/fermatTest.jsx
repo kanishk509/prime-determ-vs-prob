@@ -72,19 +72,18 @@ const FermatPrimalityTest = (props) => {
           {num.toString()} is...
           <br />
           {base[0] > 1 ? "COMPOSITE" : "PRIME"} <br />
-          Iterations: {props.iterations}
-          <br />
-          Confidence:{" "}
+          Iterations: {props.iterations}, Confidence:{" "}
           {base[0] > 1 ? 100 : 100 * (1 - Math.pow(2, -1 * props.iterations))} %
-          <br />
           {base[0] > 1 ? (
-            <p>
+            <p class="my-2">
               {base[0].toString()}
               <sup>{props.num.toString()}-1</sup> ≡ {base[1].toString()} (mod{" "}
               {props.num.toString()})
             </p>
-          ) : null}
-          Time taken: {timeTaken.toFixed(3)} ms
+          ) : (
+            <br />
+          )}
+          <div class="my-2">Time taken: {timeTaken.toFixed(3)} ms</div>
         </div>
       )}
     </div>
