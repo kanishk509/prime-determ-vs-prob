@@ -17,9 +17,13 @@ const App = () => {
   const handleSubmit = () => {
     try {
       let inputToNum = BigInt(formNum.toString().replace(/,/g, ""));
-      setWrongInput(false);
-      setNum(inputToNum);
-      setIter(Math.ceil(Math.log2(100 / (100 - confidence))));
+      if (inputToNum < 2) {
+        setWrongInput(true);
+      } else {
+        setWrongInput(false);
+        setNum(inputToNum);
+        setIter(Math.ceil(Math.log2(100 / (100 - confidence))));
+      }
     } catch {
       setWrongInput(true);
     }
