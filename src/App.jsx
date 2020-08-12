@@ -38,6 +38,9 @@ const App = () => {
     <div class="text-center">
       <h2>Primality test</h2>
       <h3>Deterministic vs Probabilistic algorithms</h3>
+      <a href="https://github.com/kanishk509/prime-determ-vs-prob">
+        (view source code)
+      </a>
       <div class="my-4">
         <div class="my-2">
           Number:{" "}
