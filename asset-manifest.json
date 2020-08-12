@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/prime-determ-vs-prob/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/prime-determ-vs-prob/static/js/main.75271a46.chunk.js",
+    "main.js.map": "/prime-determ-vs-prob/static/js/main.75271a46.chunk.js.map",
+    "runtime-main.js": "/prime-determ-vs-prob/static/js/runtime-main.389a0f51.js",
+    "runtime-main.js.map": "/prime-determ-vs-prob/static/js/runtime-main.389a0f51.js.map",
+    "static/js/2.5d739f1d.chunk.js": "/prime-determ-vs-prob/static/js/2.5d739f1d.chunk.js",
+    "static/js/2.5d739f1d.chunk.js.map": "/prime-determ-vs-prob/static/js/2.5d739f1d.chunk.js.map",
+    "index.html": "/prime-determ-vs-prob/index.html",
+    "precache-manifest.5f7f40969ee8424fb3297634737cce40.js": "/prime-determ-vs-prob/precache-manifest.5f7f40969ee8424fb3297634737cce40.js",
+    "service-worker.js": "/prime-determ-vs-prob/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/prime-determ-vs-prob/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.5d739f1d.chunk.js.LICENSE.txt": "/prime-determ-vs-prob/static/js/2.5d739f1d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.389a0f51.js",
+    "static/js/2.5d739f1d.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.75271a46.chunk.js"
+  ]
+}
