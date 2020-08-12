@@ -12,10 +12,17 @@ const App = () => {
   const [formNum, setFormNum] = useState("115297905820819");
   const [confidence, setConf] = useState(99.9);
   const [iter, setIter] = useState(4);
+  const [wrongInput, setWrongInput] = useState(false);
 
   const handleSubmit = () => {
-    setNum(BigInt(formNum.toString().replace(/,/g, "")));
-    setIter(Math.ceil(Math.log2(100 / (100 - confidence))));
+    try {
+      let inputToNum = BigInt(formNum.toString().replace(/,/g, ""));
+      setWrongInput(false);
+      setNum(inputToNum);
+      setIter(Math.ceil(Math.log2(100 / (100 - confidence))));
+    } catch {
+      setWrongInput(true);
+    }
   };
 
   const handleTryPrime = () => {
@@ -55,7 +62,10 @@ const App = () => {
             onKeyPress={(e) => {
               if (e.charCode === 13) handleSubmit();
             }}
-          />
+          />{" "}
+          {wrongInput ? (
+            <i class="text-danger">(Enter an integer &ge; 2)</i>
+          ) : null}
         </div>
         <div class="my-2">
           <Button variant="secondary" size="sm" onClick={handleTryPrime}>

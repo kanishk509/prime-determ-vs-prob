@@ -22,17 +22,19 @@ const modularExp = (base, exp, p) => {
 };
 
 const fermatCheck = (n, iter) => {
-  let checkedBases = new Set();
-  checkedBases.add(1);
+  if (n > 2) {
+    let checkedBases = new Set();
+    checkedBases.add(1);
 
-  while (iter--) {
-    let randBase = 1;
-    while (checkedBases.has(randBase)) {
-      randBase = BigInt(Math.floor(Math.random())) * n;
-      if (randBase < 2n) randBase = 2n;
+    while (iter--) {
+      let randBase = 1;
+      while (checkedBases.has(randBase)) {
+        randBase = BigInt(Math.floor(Math.random())) * n;
+        if (randBase < 2n) randBase = 2n;
+      }
+      let expRemainder = modularExp(randBase, n - 1n, n);
+      if (expRemainder !== 1) return [randBase, expRemainder];
     }
-    let expRemainder = modularExp(randBase, n - 1n, n);
-    if (expRemainder !== 1) return [randBase, expRemainder];
   }
 
   return [1, 0];
