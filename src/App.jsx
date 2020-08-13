@@ -30,7 +30,7 @@ const App = () => {
   };
 
   const handleTryPrime = () => {
-    setFormNum(biggerPrimes[Math.floor(Math.random() * biggerPrimes.length)]);
+    setFormNum(bigPrimes[Math.floor(Math.random() * bigPrimes.length)]);
   };
 
   const handleTryComposite = () => {
