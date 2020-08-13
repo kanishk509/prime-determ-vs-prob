@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/prime-determ-vs-prob/precache-manifest.e8e0cb4e2cf8e3ff8cde6bb763b76002.js"
+  "/prime-determ-vs-prob/precache-manifest.444a311f813a42aa33bcac04a09ff686.js"
 );
 
 self.addEventListener('message', (event) => {
