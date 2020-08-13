@@ -70,7 +70,7 @@ const FermatPrimalityTest = (props) => {
     <div>
       <h4>Fermat's Check (Probabilistic)</h4>
       {isProcessing ? (
-        <Spinner animation="border" />
+        <Spinner animation="grow" />
       ) : (
         <div>
           <PrimalityIndicator num={num} isPrime={base[0] < 2} />
