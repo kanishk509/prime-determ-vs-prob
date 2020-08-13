@@ -2,14 +2,29 @@
 
 import React, { useState, useEffect } from "react";
 import PrimalityIndicator from "./primalityIndicator";
-import Spinner from "react-bootstrap/Spinner";
+import WorkingIndicator from "./workingIndicator";
+import TimeIndicator from "./timeIndicator";
 
-const findFactor = (n) => {
+const findFactor = (n, callBack) => {
   n = BigInt(n);
-  for (let i = BigInt(2); i * i <= n; i++) {
-    if (n % i === 0n) return [i, n / i];
-  }
-  return [1, n];
+  let indx = BigInt(2);
+  const batchSize = 10000;
+
+  const processBatch = () => {
+    let cnt = batchSize;
+    for (; indx * indx <= n && cnt > 0; indx++, cnt--) {
+      if (n % indx === 0n) {
+        callBack([indx, n / indx]);
+        return;
+      }
+    }
+    if (indx * indx <= n) {
+      setTimeout(processBatch, 0);
+    } else {
+      callBack([1n, n]);
+    }
+  };
+  processBatch();
 };
 
 const DeterministicPrimalityTest = (props) => {
@@ -20,27 +35,22 @@ const DeterministicPrimalityTest = (props) => {
 
   useEffect(() => {
     setIsProcessing(true);
-  }, [props.num]);
+    setNum(props.num);
 
-  useEffect(() => {
-    if (isProcessing) {
-      setNum(props.num);
-
-      let timerStart = performance.now();
-      let computedFactors = findFactor(props.num);
-      let timerEnd = performance.now();
-
+    let timerStart = performance.now();
+    findFactor(props.num, (computedFactors) => {
       setFactors(computedFactors);
+      let timerEnd = performance.now();
       setTimeTaken(timerEnd - timerStart);
       setIsProcessing(false);
-    }
-  }, [isProcessing]);
+    });
+  }, [props.num]);
 
   return (
     <div>
       <h4>Deterministic Check</h4>
       {isProcessing ? (
-        <Spinner animation="grow" />
+        <WorkingIndicator />
       ) : (
         <div>
           <PrimalityIndicator num={num} isPrime={factors[0] < 2} />
@@ -51,7 +61,7 @@ const DeterministicPrimalityTest = (props) => {
           ) : (
             <p class="my-2">Could not factorize.</p>
           )}
-          Time taken: {timeTaken.toFixed(3)} ms
+          <TimeIndicator time={timeTaken} />
         </div>
       )}
     </div>

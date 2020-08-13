@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import PrimalityIndicator from "./primalityIndicator";
-import Spinner from "react-bootstrap/Spinner";
+import WorkingIndicator from "./workingIndicator";
+import TimeIndicator from "./timeIndicator";
 
 // calculate x^y % p efficiently
 const modularExp = (base, exp, p) => {
@@ -70,7 +71,7 @@ const FermatPrimalityTest = (props) => {
     <div>
       <h4>Fermat's Check (Probabilistic)</h4>
       {isProcessing ? (
-        <Spinner animation="grow" />
+        <WorkingIndicator />
       ) : (
         <div>
           <PrimalityIndicator num={num} isPrime={base[0] < 2} />
@@ -85,7 +86,7 @@ const FermatPrimalityTest = (props) => {
           ) : (
             <br />
           )}
-          <div class="my-2">Time taken: {timeTaken.toFixed(3)} ms</div>
+          <TimeIndicator time={timeTaken} />
         </div>
       )}
     </div>
