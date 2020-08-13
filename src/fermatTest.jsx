@@ -84,7 +84,7 @@ const FermatPrimalityTest = (props) => {
               {props.num.toString()})
             </p>
           ) : (
-            <br />
+            <p />
           )}
           <TimeIndicator time={timeTaken} />
         </div>
