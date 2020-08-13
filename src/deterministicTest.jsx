@@ -1,6 +1,8 @@
 /* globals BigInt */
 
 import React, { useState, useEffect } from "react";
+import PrimalityIndicator from "./primalityIndicator";
+import Spinner from "react-bootstrap/Spinner";
 
 const findFactor = (n) => {
   n = BigInt(n);
@@ -38,12 +40,10 @@ const DeterministicPrimalityTest = (props) => {
     <div>
       <h4>Deterministic Check</h4>
       {isProcessing ? (
-        <div>working...</div>
+        <Spinner animation="grow" />
       ) : (
         <div>
-          {num.toString()} is...
-          <br />
-          {factors[0] > 1 ? "COMPOSITE" : "PRIME"}
+          <PrimalityIndicator num={num} isPrime={factors[0] < 2} />
           {factors[0] > 1 ? (
             <p class="my-2">
               Factors found: {factors[0].toString()} x {factors[1].toString()}

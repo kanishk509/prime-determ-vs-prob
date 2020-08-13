@@ -1,6 +1,8 @@
 /* globals BigInt */
 
 import React, { useState, useEffect } from "react";
+import PrimalityIndicator from "./primalityIndicator";
+import Spinner from "react-bootstrap/Spinner";
 
 // calculate x^y % p efficiently
 const modularExp = (base, exp, p) => {
@@ -68,12 +70,10 @@ const FermatPrimalityTest = (props) => {
     <div>
       <h4>Fermat's Check (Probabilistic)</h4>
       {isProcessing ? (
-        <div>working...</div>
+        <Spinner animation="border" />
       ) : (
         <div>
-          {num.toString()} is...
-          <br />
-          {base[0] > 1 ? "COMPOSITE" : "PRIME"} <br />
+          <PrimalityIndicator num={num} isPrime={base[0] < 2} />
           Iterations: {props.iterations}, Confidence:{" "}
           {base[0] > 1 ? 100 : 100 * (1 - Math.pow(2, -1 * props.iterations))} %
           {base[0] > 1 ? (

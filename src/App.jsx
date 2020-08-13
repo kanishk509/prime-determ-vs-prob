@@ -72,13 +72,22 @@ const App = () => {
           ) : null}
         </div>
         <div class="my-2">
-          <Button variant="secondary" size="sm" onClick={handleTryPrime}>
+          <Button
+            bsPrefix="btn btn-secondary btn-sm m-1"
+            onClick={handleTryPrime}
+          >
             Try a big prime
-          </Button>{" "}
-          <Button variant="secondary" size="sm" onClick={handleTryComposite}>
+          </Button>
+          <Button
+            bsPrefix="btn btn-secondary btn-sm m-1"
+            onClick={handleTryComposite}
+          >
             Try a non-prime with big prime factors
-          </Button>{" "}
-          <Button variant="secondary" size="sm" onClick={handleTryCarmichael}>
+          </Button>
+          <Button
+            bsPrefix="btn btn-secondary btn-sm m-1"
+            onClick={handleTryCarmichael}
+          >
             Try a Carmichael number (see note 4)
           </Button>
         </div>
